@@ -1,0 +1,174 @@
+*{
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    margin: 0;
+}
+
+body{
+    background: black;
+}
+
+header{
+    background-image: url(../images/banner.png), radial-gradient(rgb(2, 36, 51), rgb(0, 0, 0));
+    border: thin solid #33A8DB;
+    height: 605px;
+    margin-bottom: 118px;
+
+}
+
+.banner-content{
+    width: 510px;
+    margin: 56px auto 0;
+}
+
+header img{
+    background: rgb(0, 0, 0, .2);
+    box-shadow: 0 0 0 25px rgb(0, 0, 0, .2);
+    border-radius: 50%;
+    margin-bottom: 46px;
+}
+
+.banner-content h1{
+    background: linear-gradient(#33A8DB, #1472B7);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 46.96px;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 16px;
+}
+
+.banner-content p{
+    color: white;
+    font-weight: 400;
+    line-height: 23.48px;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.banner-content button{
+    letter-spacing: 2.1px;
+    padding: 19px 91px;
+    font-size: 16px;
+    line-height: 18.78px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #31A8DD;
+    background: transparent;
+    border: 2px solid;
+    border-image-source: linear-gradient(#3BA1CD, #1572B7);
+    border-image-slice: 10;
+}
+
+.banner-content button:hover{
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(#3BA1CD, #1572B7);
+}
+
+#course-content{
+    width: 792px;
+    height: 395px;
+    margin: 0 auto 90px;
+}
+
+#course-content h2{
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37.57px;
+    color: #33A8DB;
+    margin-bottom: 24px;
+}
+
+#course-content p, #course-content div, #professional-challenges p, footer p{
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.78px;
+    margin-bottom: 24px;
+}
+
+.module{
+    margin-bottom: 10px;
+    width: 535px;
+    height: 18.78px;
+    background: #252525;
+    border-radius: 57px;
+    padding: 16px 127px;
+    border: thin solid #33A8DB;
+    box-shadow: inset -2px 6px 7px rgb(0, 0, 0, .4);
+}
+
+.module span{
+    color: #33A8DB;
+}
+
+#transform-world{
+    height: 500px;
+    background-image: url(../images/woman-code.png);
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    text-transform: lowercase;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 46.96px;
+    border-width: thin thin thin 0;
+    border-color: #33A8DB;
+    border-style: solid;
+    margin-bottom: 76px;
+}
+
+#transform-world p{
+    text-align: left;
+    text-shadow: #33A8DB 3px 2px;
+    width: 272px;
+    height: 141px;
+    padding: 180px;
+}
+
+#professional-challenges{
+    margin-bottom: 91px;
+}
+
+#professional-challenges h2{
+    margin: auto;
+    width: 40%;
+    text-transform: uppercase;
+    color: #33A8DB;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37.57px;
+    letter-spacing: 1.9px;
+}
+
+#professional-challenges p{
+    width: 40%;
+    margin: auto;
+    height: 76px;
+}
+
+footer{
+    border: 1px solid #33A8DB;
+    padding: 40px;
+    background-image: linear-gradient(rgb(0, 0, 0) 40%, rgb(0, 26, 37));
+}
+
+footer img{
+    margin-bottom: 10px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #33A8DB;
+    font-weight: 700;
+}
+/* Syntax: [ [ <'font-style'> || 
+                <font-variant-css21> || 
+                <'font-weight'> || 
+                <'font-stretch'> ]? 
+                <'font-size'> [ / <'line-height'> ]? 
+                <'font-family'> ] | caption | icon | menu | message-box | small-caption | status-bar */
