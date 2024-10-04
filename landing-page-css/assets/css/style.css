@@ -76,7 +76,7 @@ header img{
 #course-content h2{
     letter-spacing: 1.9px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 32px;
     line-height: 37.57px;
     color: #33A8DB;
@@ -139,7 +139,7 @@ header img{
     width: 40%;
     text-transform: uppercase;
     color: #33A8DB;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 32px;
     line-height: 37.57px;
     letter-spacing: 1.9px;
@@ -152,7 +152,7 @@ header img{
 }
 
 footer{
-    border: 1px solid #33A8DB;
+    border: thin solid #33A8DB;
     padding: 40px;
     background-image: linear-gradient(rgb(0, 0, 0) 40%, rgb(0, 26, 37));
 }
@@ -164,7 +164,7 @@ footer img{
 footer a{
     text-decoration: none;
     color: #33A8DB;
-    font-weight: 700;
+    font-weight: bold;
 }
 /* Syntax: [ [ <'font-style'> || 
                 <font-variant-css21> || 
