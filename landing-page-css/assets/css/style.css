@@ -1,7 +1,8 @@
+@import url(./reset.css);
+
 *{
     text-align: center;
     font-family: Raleway, sans-serif;
-    margin: 0;
 }
 
 body{
@@ -166,9 +167,3 @@ footer a{
     color: #33A8DB;
     font-weight: bold;
 }
-/* Syntax: [ [ <'font-style'> || 
-                <font-variant-css21> || 
-                <'font-weight'> || 
-                <'font-stretch'> ]? 
-                <'font-size'> [ / <'line-height'> ]? 
-                <'font-family'> ] | caption | icon | menu | message-box | small-caption | status-bar */
