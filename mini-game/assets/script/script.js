@@ -32,9 +32,11 @@ function moverBallon(){
 
 function contagemRegressiva(){
     if(valores.values.tempo == 0 || valores.values.vidas == 0){
-        valores.views.titulo.textContent = (valores.values.pontuacao >= 10) ? `Parabéns, sua pontuação foi de ${valores.values.pontuacao} pontos, VOCÊ É O NOSSO BOLA DE OURO!` : `Sua pontuação foi de ${valores.values.pontuacao} pontos, que pena... Essa temporada não foi sua.`
+        valores.views.titulo.textContent = (valores.values.pontuacao >= 30) ? `Parabéns, sua pontuação foi de ${valores.values.pontuacao} pontos, VOCÊ É O NOSSO BOLA DE OURO!` : `Sua pontuação foi de ${valores.values.pontuacao} pontos, que pena... Essa temporada não foi sua.`
         clearInterval(movimento)
         clearInterval(contagem)
+        let audio = new Audio("./assets/audios/final.mp3")
+        audio.play()
     }
     if(valores.values.combo == 10) valores.views.titulo.textContent = "Você está com TUDO!! Pontuação dobrada"
     else{
@@ -49,6 +51,9 @@ function pontuar(){
             if(quadrado == valores.views.ballonDor){
                 valores.values.pontuacao = (valores.values.combo >= 10) ? valores.values.pontuacao + 2 : valores.values.pontuacao + 1
                 ++valores.values.combo
+                let audio = new Audio("./assets/audios/acertou.ogg")
+                audio.volume = 0.2
+                audio.play()
             }
             else{
                 valores.values.combo = 0
@@ -56,6 +61,9 @@ function pontuar(){
                 valores.values.vidas--
                 if(valores.values.vidas == 0) contagemRegressiva()
                 else valores.views.titulo.textContent = `Tome cuidado, você só tem ${valores.values.vidas} vida agora!`
+                let audio = new Audio("./assets/audios/errou.ogg")
+                audio.volume = 0.2
+                audio.play()
             }
             valores.views.pontos.textContent = valores.values.pontuacao
             valores.views.vidaTotal.textContent = `x${valores.values.vidas}`
