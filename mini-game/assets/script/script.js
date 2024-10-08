@@ -72,5 +72,5 @@ function pontuar(){
 }
 
 pontuar()
-var movimento = setInterval(moverBallon, 600)
+var movimento = setInterval(moverBallon, 800)
 var contagem = setInterval(contagemRegressiva, 1000)
