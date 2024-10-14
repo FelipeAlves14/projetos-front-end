@@ -6,3 +6,5 @@
 - [Landing page com CSS](./landing-page-css) - Após receber um protótipo e uma estrutura HTML pré-definida, montei o CSS fiel ao protótipo com meus conhecimentos adquiridos.
 <br><br>
 - [Mini game](./mini-game) - Fiz um mini-game para testar os reflexos do jogador, contendo temporizador e pontuação, com HTML, CSS e Javascript, com uma temática de minha escolha.
+<br><br>
+- [Classificador de nível de herói](./classificador-de-nivel) - Criei um algoritmo Javascript para receber um valor e um nome de um herói e dizer qual a classificação do personagem em um jogo.
