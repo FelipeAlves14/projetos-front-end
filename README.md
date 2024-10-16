@@ -8,3 +8,5 @@
 - [Mini game](./mini-game) - Fiz um mini-game para testar os reflexos do jogador, contendo temporizador e pontuação, com HTML, CSS e Javascript, com uma temática de minha escolha.
 <br><br>
 - [Classificador de nível de herói](./classificador-de-nivel) - Criei um algoritmo Javascript para receber um valor e um nome de um herói e dizer qual a classificação do personagem em um jogo.
+<br><br>
+- [Jogo da memória](./jogo-da-memoria/) - Desenvolvi um jogo da memória apenas com elementos HTML, CSS e manipulamento de DOM com JavaScript, a fim de descobrir como o manipulamento de DOM funciona e descobrir novas funcionalidades e features de CSS e JS.
