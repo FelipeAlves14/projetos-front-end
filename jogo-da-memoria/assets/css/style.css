@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url(../../../reset.css);
+
+body {
+    user-select: none;
+    background: lightsteelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, .reset {
+    font-family: 'Sixtyfour Convergence';
+    margin-bottom: 10px;
+    letter-spacing: -0.15em;
+    font-size: 3em;
+}
+
+main {
+    text-align: center;
+}
+
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(rgb(250, 32, 32), rgb(172, 23, 23));
+    width: 90vh;
+    height: 80vh;
+}
+
+.carta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    margin: 0 15px;
+    height: 150px;
+    width: 100px;
+    background: steelblue;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    perspective: preserve-3d;
+}
+
+.carta.virada{
+    transform: rotateY(0deg);
+}
+
+.carta::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(7, 47, 80);
+    transform: rotateY(0deg);
+    transition: 0.25s;
+    backface-visibility: hidden;
+}
+
+.virada::after{
+    transform: rotateY(180deg);
+}
+
+.reset {
+    margin: 20px 0;
+    width: 80%;
+    padding: 20px;
+    font-size: 1em;
+}
