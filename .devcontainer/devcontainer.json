@@ -11,7 +11,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ritwickdey.LiveServer",
+        "ritwickdey.LiveServer",
 				"dbaeumer.vscode-eslint",
 				"ms-vscode.vscode-typescript-next"
 			]
