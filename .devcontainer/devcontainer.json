@@ -1,0 +1,15 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers-community/npm-features/typescript:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.vscode-typescript-next",
+				"ritwickdey.LiveServer",
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	}
+}
