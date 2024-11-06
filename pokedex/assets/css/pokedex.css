@@ -126,6 +126,7 @@ nav li{
 }
 
 .pokemon {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     margin: .5rem;
