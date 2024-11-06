@@ -9,8 +9,9 @@
 <br><br>
 - [Classificador de nível de herói](./classificador-de-nivel) - Criei um algoritmo Javascript para receber um valor e um nome de um herói e dizer qual a classificação do personagem em um jogo.
 <br><br>
-- [Jogo da memória](./jogo-da-memoria/) - Desenvolvi um jogo da memória apenas com elementos HTML, CSS e manipulamento de DOM com JavaScript, a fim de descobrir como o manipulamento de DOM funciona e descobrir novas funcionalidades e features de CSS e JS.
-
+- [Jogo da memória](./jogo-da-memoria) - Desenvolvi um jogo da memória apenas com elementos HTML, CSS e manipulamento de DOM com JavaScript, a fim de descobrir como o manipulamento de DOM funciona e descobrir novas funcionalidades e features de CSS e JS.
+<br><br>
+- [Pokédex](./pokedex) - Recebi uma pokédex incompleta, consumindo uma API externa, e completei ela adicionando detalhes de pokemons e listagens por região.
 
 
 ## Extra
