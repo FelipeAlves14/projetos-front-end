@@ -16,7 +16,7 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.shiny = pokeDetail.sprites.front_shiny
     pokemon.height = pokeDetail.height
     pokemon.weight = pokeDetail.weight
-    pokemon.stats = pokeDetail.stats.map((statSlot) => statSlot.base_stat)
+    pokemon.stats = pokeDetail.stats
 
     return pokemon
 }

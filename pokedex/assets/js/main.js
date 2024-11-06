@@ -1,5 +1,3 @@
-const button_shiny = document.getElementById('button-shiny')
-const foto = document.getElementById('foto')
 const pokemonList = document.getElementById('pokemonList')
 const regions = document.querySelectorAll('.region')
 
@@ -60,7 +58,7 @@ regions.forEach((region) => {
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="detalhePokemon(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -76,13 +74,3 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
-button_shiny.addEventListener('click', () => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${foto.className}`
-    return fetch(url)
-        .then((response) => response.json())
-        .then((jsonBody) => convertPokeApiDetailToPokemon(jsonBody))
-        .then((pokemon) => {
-            foto.src = foto.src === pokemon.shiny ? pokemon.photo : pokemon.shiny
-        })
-
-});
