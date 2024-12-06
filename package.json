@@ -2,9 +2,15 @@
   "name": "factorial-example",
   "version": "1.0.0",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "ts-test": "ts-jest"
+  },
+  "dependencies": {
+    "factorial-example": "file:"
   }
 }
