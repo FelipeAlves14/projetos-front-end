@@ -12,6 +12,7 @@
     "ts-test": "ts-jest"
   },
   "dependencies": {
+    "@angular/cli": "^19.1.5",
     "factorial-example": "file:"
   }
 }
