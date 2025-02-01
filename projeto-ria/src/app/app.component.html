@@ -1,0 +1,37 @@
+<main class="main">
+  <h1>Insira seus jogadores de Linha!</h1>
+
+  <app-form-jogador (insertOutEvent)="inserirJogador($event)"></app-form-jogador>
+  
+  @if (jogadores.length > 0) {
+    <h2>Seus jogadores:</h2>
+    <p-panel  header="Jogadores">
+      <p-table
+        [value]="jogadores"
+      >
+        <ng-template #header>
+          <tr>
+              <th>Name</th>
+              <th>Jogador internacional</th>
+              <th>Remove</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-jogador>
+            <tr>
+                <td><app-jogador [jogador]="jogador"></app-jogador></td>
+                @if (jogador.internacional) {
+                    <td><i class="pi pi-star-fill"></i></td>
+                } @else {
+                    <td><i class="pi pi-star"></i></td>
+                }
+                <td><p-button label="Deletar" icon="pi pi-trash" (onClick)="deletarJogador(jogador)" /></td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+  } @else {
+    <p>Nenhum jogador inserido ainda.</p>
+  }
+  <i class="pi pi-at mb">FelipeAlves14</i>
+</main>
+<router-outlet />
