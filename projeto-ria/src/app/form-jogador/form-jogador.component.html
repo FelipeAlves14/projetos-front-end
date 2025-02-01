@@ -1,0 +1,35 @@
+<p-panel class="form" header="Inserir Jogador">
+    <label for="nome">Nome: </label>
+    <input pInputText [pAutoFocus]="true" [(ngModel)]="jogador.nome" placeholder="Nome do jogador..."/>
+    <div class="stats">
+        <div class="stats-input">
+            <label for="velocidade">Velocidade: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.velocidade" placeholder="Velocidade do jogador..."/>
+        </div>
+        <div class="stats-input">
+            <label for="drible">Drible: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.drible" placeholder="Drible do jogador..."/>
+        </div>
+        <div class="stats-input">
+            <label for="finalizacao">Finalização: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.finalizacao" placeholder="Finalização do jogador..."/>
+        </div>
+        <div class="stats-input">
+            <label for="defesa">Defesa: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.defesa" placeholder="Defesa do jogador..."/>
+        </div>
+        <div class="stats-input">
+            <label for="passe">Passe: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.passe" placeholder="Passe do jogador..."/>
+        </div>
+        <div class="stats-input">
+            <label for="fisico">Físico: </label>
+            <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogador.stats.fisico" placeholder="Físico do jogador..."/>
+        </div>
+    </div>
+    @if (jogador.nome === ''){
+       <p-button label="Inserir" icon="pi pi-plus" (onClick)="inserirJogador()" disabled/>
+    } @else {
+       <p-button label="Inserir {{ jogador.nome }}" icon="pi pi-plus" (onClick)="inserirJogador()"/>
+    }
+</p-panel>
