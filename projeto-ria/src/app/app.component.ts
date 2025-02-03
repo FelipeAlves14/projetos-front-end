@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { JogadorComponent, Jogador } from './jogador/jogador.component';
+import { Jogador } from './jogador/jogador.component';
 import { FormJogadorComponent } from './form-jogador/form-jogador.component';
+import { ListaJogadoresComponent } from './lista-jogadores/lista-jogadores.component';
 import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { PanelModule } from 'primeng/panel';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, JogadorComponent, FormJogadorComponent, ButtonModule, TableModule, PanelModule],
+  imports: [RouterOutlet, FormJogadorComponent, ListaJogadoresComponent, ButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -23,9 +22,5 @@ export class AppComponent {
 
   deletarJogador(jogador: Jogador) {
     this.jogadores = this.jogadores.filter(j => j !== jogador);
-  }
-
-  trackByNome(index: number, jogador: Jogador): string {
-    return jogador.nome;
   }
 }
