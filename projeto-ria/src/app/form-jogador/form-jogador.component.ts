@@ -1,34 +1,66 @@
-import { Component, EventEmitter, Output } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { ButtonModule } from "primeng/button";
-import { InputTextModule } from "primeng/inputtext";
-import { InputNumberModule } from "primeng/inputnumber";
-import { PanelModule } from "primeng/panel";
-import { AutoFocusModule } from "primeng/autofocus";
-import { Jogador, Stats } from "../jogador/jogador.component";
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  ReactiveFormsModule,
+  FormGroup,
+} from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { PanelModule } from 'primeng/panel';
+import { AutoFocusModule } from 'primeng/autofocus';
+import { Jogador, Stats } from '../jogador/jogador.component';
+import { JogadorService } from '../jogador/jogador-service';
+import { Router } from '@angular/router';
+import jogadorFormModel from './form-jogador';
 
 @Component({
   selector: 'app-form-jogador',
-  imports: [FormsModule, ButtonModule, InputTextModule, PanelModule, AutoFocusModule, InputNumberModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    InputTextModule,
+    PanelModule,
+    AutoFocusModule,
+    InputNumberModule,
+  ],
   templateUrl: './form-jogador.component.html',
-  styleUrl: './form-jogador.component.scss'
+  styleUrl: './form-jogador.component.scss',
 })
 export class FormJogadorComponent {
-  defaultJogador = new Jogador('', {finalizacao: 0, passe: 0, drible: 0, defesa: 0, fisico: 0, velocidade: 0});
+  router: Router = new Router();
+  myForm: FormGroup = jogadorFormModel;
 
+  defaultJogador = new Jogador('', {
+    finalizacao: 0,
+    passe: 0,
+    drible: 0,
+    defesa: 0,
+    fisico: 0,
+    velocidade: 0,
+  });
   jogador = this.defaultJogador;
-  @Output() insertOutEvent = new EventEmitter<Jogador>();
+
   inserirJogador() {
-    const stats: Stats = {
-      finalizacao: Number(this.jogador.stats.finalizacao),
-      passe: Number(this.jogador.stats.passe),
-      defesa: Number(this.jogador.stats.defesa),
-      fisico: Number(this.jogador.stats.fisico),
-      drible: Number(this.jogador.stats.drible),
-      velocidade: Number(this.jogador.stats.velocidade)
+    if (this.myForm.valid) {
+      const stats: Stats = {
+        finalizacao: this.myForm.value.finalizacao,
+        passe: this.myForm.value.passe,
+        drible: this.myForm.value.drible,
+        defesa: this.myForm.value.defesa,
+        fisico: this.myForm.value.fisico,
+        velocidade: this.myForm.value.velocidade,
       };
-    const novoJogador: Jogador = new Jogador(this.jogador.nome, stats);
-    this.insertOutEvent.emit(novoJogador);
-    this.jogador = this.defaultJogador;
+      const novoJogador: Jogador = new Jogador(this.myForm.value.nome, stats);
+      JogadorService.insert(novoJogador);
+      this.jogador.nome = this.defaultJogador.nome;
+      this.jogador.stats = this.defaultJogador.stats;
+      this.voltar();
+    }
+  }
+
+  voltar() {
+    this.router.navigate(['']);
   }
 }

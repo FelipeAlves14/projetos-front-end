@@ -1,14 +1,3 @@
 <main class="main">
-  <h1>Insira seus jogadores de Linha!</h1>
-
-  <app-form-jogador (insertOutEvent)="inserirJogador($event)"></app-form-jogador>
-  
-  @if (jogadores.length > 0) {
-    <h2>Seus jogadores:</h2>
-    <app-lista-jogadores (deletarEvent)="deletarJogador($event)" [jogadores]="jogadores"></app-lista-jogadores>
-  } @else {
-    <p>Nenhum jogador inserido ainda.</p>
-  }
-  <i class="pi pi-at mb">FelipeAlves14</i>
+  <router-outlet />
 </main>
-<router-outlet />
