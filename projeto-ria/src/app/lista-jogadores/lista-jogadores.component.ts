@@ -3,19 +3,29 @@ import { Jogador, JogadorComponent } from '../jogador/jogador.component';
 import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
+import { JogadorService } from '../jogador/jogador-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-jogadores',
   imports: [TableModule, PanelModule, JogadorComponent, ButtonModule],
   templateUrl: './lista-jogadores.component.html',
-  styleUrl: './lista-jogadores.component.scss'
+  styleUrl: './lista-jogadores.component.scss',
 })
 export class ListaJogadoresComponent {
-  @Input() jogadores: Jogador[] = [];
+  jogadores: Jogador[] = JogadorService.loadJogadores();
+  router: Router = new Router();
 
-  @Output() deletarEvent = new EventEmitter<Jogador>();
+  atualizarJogadores() {
+    this.jogadores = JogadorService.loadJogadores();
+  }
 
-  deletarJogador(jogador: Jogador){
-    this.deletarEvent.emit(jogador);
+  inserirJogador() {
+    this.router.navigate(['/jogadores/novo']);
+  }
+
+  deletarJogador(jogador: Jogador) {
+    JogadorService.remove(jogador.nome);
+    this.atualizarJogadores();
   }
 }

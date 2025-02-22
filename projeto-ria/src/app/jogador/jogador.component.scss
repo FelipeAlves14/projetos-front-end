@@ -1,21 +1,25 @@
-.jogador{
-    text-align: center;
+.jogador {
+  text-align: center;
 }
 
-.stats{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "stats stats"
-                         "stats stats"
-                         "stats stats";
-    grid-gap: 1rem;
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "stats stats"
+    "stats stats"
+    "stats stats";
+  grid-gap: 1rem;
 }
 
 .stats-input {
-    text-align: right;
+  text-align: left;
 }
 
+.stats-input label {
+  text-align: left;
+}
 
-.mx{
-    margin: auto 1rem;
+.mx {
+  margin: auto 1rem;
 }

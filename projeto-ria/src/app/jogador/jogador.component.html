@@ -1,45 +1,107 @@
 <div class="jogador">
-    <strong>{{ jogador.nome }}</strong> - {{ jogador.geralClass }}
-    @if (detalhes === true) {
-        <p-button class="mx" icon="pi pi-caret-up" severity="info" label="Detalhar" (onClick)="detalharJogador()"></p-button>
-        <div class="stats">
-            <p>VEL: {{ jogador.stats.velocidade }}</p><p>DRI: {{ jogador.stats.drible }}</p>
-            <p>FIN: {{ jogador.stats.finalizacao }}</p><p>DEF: {{ jogador.stats.defesa }}</p>
-            <p>PAS: {{ jogador.stats.passe }}</p><p>FIS: {{ jogador.stats.fisico }}</p>
+  <strong>{{ jogador.nome }}</strong> - {{ jogador.geralClass }}
+  @if (detalhes === true) {
+  <p-button
+    class="mx"
+    icon="pi pi-caret-up"
+    severity="info"
+    label="Detalhar"
+    (onClick)="detalharJogador()"
+  ></p-button>
+  <div class="stats">
+    <p>VEL: {{ jogador.stats.velocidade }}</p>
+    <p>DRI: {{ jogador.stats.drible }}</p>
+    <p>FIN: {{ jogador.stats.finalizacao }}</p>
+    <p>DEF: {{ jogador.stats.defesa }}</p>
+    <p>PAS: {{ jogador.stats.passe }}</p>
+    <p>FIS: {{ jogador.stats.fisico }}</p>
+  </div>
+  <p-panel class="form" header="Editar jogador">
+    <form [formGroup]="myForm" (ngSubmit)="editarJogador()">
+      <label for="nome">Nome: </label>
+      <input
+        [style]="{ 'margin-bottom': '1rem' }"
+        pInputText
+        [pAutoFocus]="true"
+        id="nome"
+        formControlName="nome"
+        placeholder="Nome do jogador..."
+      />
+      <div *ngIf="myForm.get('nome')?.hasError('required')">
+        <p>Nome é obrigatório!</p>
+      </div>
+      <div class="stats">
+        <div class="stats-input">
+          <label for="velocidade">Velocidade: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="velocidade"
+            formControlName="velocidade"
+            placeholder="Velocidade do jogador..."
+          />
         </div>
-        <p-panel class="form" header="Editar jogador">
-            <label for="nome">Nome: </label>
-            <input pInputText [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.nome" placeholder="Nome do jogador..." />
-            <div class="stats">
-                <div class="stats-input">
-                    <label for="velocidade">Velocidade: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.velocidade" placeholder="Velocidade do jogador..." />
-                </div>
-                <div class="stats-input">
-                    <label for="drible">Drible: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.drible" placeholder="Drible do jogador..." />
-                </div>
-                <div class="stats-input">
-                    <label for="finalizacao">Finalização: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.finalizacao" placeholder="Finalização do jogador..." />
-                </div>
-                <div class="stats-input">
-                    <label for="defesa">Defesa: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.defesa" placeholder="Defesa do jogador..." />
-                </div>
-                <div class="stats-input">
-                    <label for="passe">Passe: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.passe" placeholder="Passe do jogador..." />
-                </div>
-                <div class="stats-input">
-                    <label for="fisico">Físico: </label>
-                    <p-inputnumber [pAutoFocus]="true" [(ngModel)]="jogadorAtualizado.stats.fisico" placeholder="Físico do jogador..." />
-                </div>
-            </div>
-            <p-button label="Editar {{ jogador.nome }}" icon="pi pi-user-edit" (onClick)="editarJogador()" />
-        </p-panel>
-        
-    } @else {
-        <p-button class="mx" icon="pi pi-caret-down" severity="info" label="Detalhar" (onClick)="detalharJogador()"></p-button>
-    }
+        <div class="stats-input">
+          <label for="drible">Drible: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="drible"
+            formControlName="drible"
+            placeholder="Drible do jogador..."
+          />
+        </div>
+        <div class="stats-input">
+          <label for="finalizacao">Finalização: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="finalizacao"
+            formControlName="finalizacao"
+            placeholder="Finalização do jogador..."
+          />
+        </div>
+        <div class="stats-input">
+          <label for="defesa">Defesa: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="defesa"
+            formControlName="defesa"
+            placeholder="Defesa do jogador..."
+          />
+        </div>
+        <div class="stats-input">
+          <label for="passe">Passe: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="passe"
+            formControlName="passe"
+            placeholder="Passe do jogador..."
+          />
+        </div>
+        <div class="stats-input">
+          <label for="fisico">Físico: </label>
+          <p-inputnumber
+            [pAutoFocus]="true"
+            id="fisico"
+            formControlName="fisico"
+            placeholder="Físico do jogador..."
+          />
+        </div>
+      </div>
+      <p-button
+        [style]="{ 'margin-top': '1rem' }"
+        type="submit"
+        label="Editar {{ jogador.nome }}"
+        icon="pi pi-user-edit"
+      />
+    </form>
+  </p-panel>
+
+  } @else {
+  <p-button
+    class="mx"
+    icon="pi pi-caret-down"
+    severity="info"
+    label="Detalhar"
+    (onClick)="detalharJogador()"
+  ></p-button>
+  }
 </div>
