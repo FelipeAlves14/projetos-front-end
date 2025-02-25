@@ -1,0 +1,33 @@
+<h1>Bem-vindos(as) a nossa aplicação de cadastro de jogadores de linha!</h1>
+<form [formGroup]="myForm" (ngSubmit)="login()">
+  <label for="username">Username: </label>
+  <input
+    pInputText
+    [pAutoFocus]="true"
+    id="username"
+    formControlName="username"
+    placeholder="Digite seu username..."
+  />
+  <div class="error" *ngIf="myForm.get('username')?.hasError('required')">
+    <p>Username é obrigatório!</p>
+  </div>
+      <label for="senha">Senha: </label>
+      <p-password
+        [pAutoFocus]="true"
+        id="password"
+        formControlName="password"
+        placeholder="Digite sua senha..."
+      />
+      <div class="error" *ngIf="myForm.get('password')?.hasError('required')">
+        <p>A senha é obrigatória</p>
+      </div>
+      <div class="error" *ngIf="myForm.get('password')?.hasError('minlength')">
+        <p>A senha deve ter no mínimo 8 caracteres</p>
+      </div>
+  <p-button
+    label="Entrar"
+    type="submit"
+    (onclick)="login()"
+    icon="pi pi-user"
+  />
+</form>
