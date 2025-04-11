@@ -6,4 +6,4 @@
 
 ![HTML sem estilo](./imagens/HTML-sem-estilo.png)
 
-&emsp;Agora, após análise do protótipo do Figma e mão na massa, finalizei o CSS da página de maneira fiel ao protótipo. Acompanhe meu resultado final da minha landing page [aqui](https://lipeeeeeee.github.io/projetos-front-end/landing-page-css/)!
+&emsp;Agora, após análise do protótipo do Figma e mão na massa, finalizei o CSS da página de maneira fiel ao protótipo. Acompanhe meu resultado final da minha landing page [aqui](https://felipealves14.github.io/projetos-front-end/landing-page-css/)!

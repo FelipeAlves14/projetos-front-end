@@ -6,4 +6,4 @@
 
 &emsp;Após gerar as cartas, você pode selecioná-las e revelar seu conteúdo oculto, se a próxima carta selecionada contiver o mesmo conteúdo, ambas ficarão viradas para cima, caso contrário, ambas virarão de cabeça para baixo.
 
-Agora com o jogo funcionando, você pode acompanhar meu resultado [aqui](https://lipeeeeeee.github.io/projetos-front-end/jogo-da-memoria/)!
+Agora com o jogo funcionando, você pode acompanhar meu resultado [aqui](https://felipealves14.github.io/projetos-front-end/jogo-da-memoria/)!
